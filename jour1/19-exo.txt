@@ -1,4 +1,4 @@
-créer un nouveau fichier 18-exo.html
+créer un nouveau fichier 20-exo.html
 
 variable cocktails qui est un tableau vide par défaut 
 
@@ -8,6 +8,8 @@ www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
 
 veuillez afficher dans le template 
 
+input dans lequel vous vous allez rechercher un cocktail 
+dès que l'input est modifié => relancer une requête => modifier la liste des cocktails affichés 
 boucler sur tous les cocktails récupérés
     <h1>nom du cocktail</h1>
     <p>description </p>
