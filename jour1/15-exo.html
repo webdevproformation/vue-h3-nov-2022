@@ -10,9 +10,9 @@
     <div id="app">
         <input type="checkbox" v-model="check">
         <input type="text" v-model="text">
-        <p v-if="check">{{ text }}</p>
+        <p v-if="check">{{ text }}</p><!-- absent du DOM-->
         <!-- solution alternative -->
-        <p v-show="check">{{ text }}</p>
+        <p v-show="check">{{ text }}</p> <!-- présent dans le DOM mais avec un display:none -->
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
