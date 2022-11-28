@@ -1,4 +1,4 @@
-créer un nouveau fichier 20-exo.html
+créer un nouveau fichier 23-exo.html
 
 variable cocktails qui est un tableau vide par défaut 
 
