@@ -11,9 +11,11 @@ import SeptiemeVue from './components/Septieme.vue';
 import Sixieme from './components/Sixieme.vue';
 import Troisieme from './components/Troisieme.vue';
 import Article from './components/Article.vue';
+import Data from './components/Data.vue';
 </script>
 
 <template>
+  <Data />
   <Premier />
   <Deuxieme />
   <Troisieme />
