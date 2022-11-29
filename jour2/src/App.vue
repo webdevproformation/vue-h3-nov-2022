@@ -1,10 +1,12 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import Cinquieme from './components/Cinquieme.vue';
 import Deuxieme from './components/Deuxieme.vue';
 import HelloWorld from './components/HelloWorld.vue'
 import Premier from "./components/Premier.vue"
 import Quatrieme from './components/Quatrieme.vue';
+import Sixieme from './components/Sixieme.vue';
 import Troisieme from './components/Troisieme.vue';
 </script>
 
@@ -13,6 +15,8 @@ import Troisieme from './components/Troisieme.vue';
   <Deuxieme />
   <Troisieme />
   <Quatrieme />
+  <Cinquieme />
+  <Sixieme />
 </template>
 
 <style scoped>
