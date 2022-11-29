@@ -1,7 +1,8 @@
 <template>
     <div>
+        <h3>communication entre composants Parent / Enfant</h3>
         <article v-for='compteur , index  in compteurs' :key="index">
-            <Compteur :nb="compteur.nb" @augmenter="plus" :id="compteur.id" />
+            <Compteur :nb="compteur.nb" @augmenter="plus" :id="compteur.id" @diminuer="moins" />
         </article>
     </div>
 </template>
@@ -13,8 +14,11 @@ import Compteur from "./Compteur.vue";
               /*  const compteurAModifier =  this.compteurs.find(item => item.id === id)
                const index = this.compteurs.indexOf(compteurAModifier)
                this.compteurs[index].nb++; */
-               
+
                this.compteurs.find(item => item.id === id).nb++;
+            }, 
+            moins : function(id){
+                this.compteurs.find(item => item.id === id).nb--;
             }
         },
         data : () => {

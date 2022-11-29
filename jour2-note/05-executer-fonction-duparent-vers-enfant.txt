@@ -23,3 +23,11 @@ const emit = defineEmits(["suppr"])
 
 
 <button @click="emit('suppr', objet)"><button>
+
+
+cas pratique 
+
+ajouter, pour chaque compteur,
+ un bouton pour diminuer la valeur nb 
+
+
