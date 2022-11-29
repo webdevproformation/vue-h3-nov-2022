@@ -3,6 +3,7 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import Cinquieme from './components/Cinquieme.vue';
 import Deuxieme from './components/Deuxieme.vue';
+import Etudiants from './components/Etudiants.vue';
 import HelloWorld from './components/HelloWorld.vue'
 import Premier from "./components/Premier.vue"
 import Quatrieme from './components/Quatrieme.vue';
@@ -19,6 +20,7 @@ import Troisieme from './components/Troisieme.vue';
   <Cinquieme />
   <Sixieme />
   <SeptiemeVue />
+  <Etudiants />
 </template>
 
 <style scoped>
