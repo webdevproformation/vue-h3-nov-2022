@@ -4,6 +4,7 @@
 import Deuxieme from './components/Deuxieme.vue';
 import HelloWorld from './components/HelloWorld.vue'
 import Premier from "./components/Premier.vue"
+import Quatrieme from './components/Quatrieme.vue';
 import Troisieme from './components/Troisieme.vue';
 </script>
 
@@ -11,6 +12,7 @@ import Troisieme from './components/Troisieme.vue';
   <Premier />
   <Deuxieme />
   <Troisieme />
+  <Quatrieme />
 </template>
 
 <style scoped>
