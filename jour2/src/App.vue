@@ -1,17 +1,16 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import Deuxieme from './components/Deuxieme.vue';
 import HelloWorld from './components/HelloWorld.vue'
 import Premier from "./components/Premier.vue"
+import Troisieme from './components/Troisieme.vue';
 </script>
 
 <template>
-  <div>
-    <h1>Hello World !</h1>
-  </div>
   <Premier />
-  <Premier></Premier>
-  <HelloWorld msg="découverte de VueJS" />
+  <Deuxieme />
+  <Troisieme />
 </template>
 
 <style scoped>

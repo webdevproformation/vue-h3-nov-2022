@@ -88,3 +88,8 @@ retourne le html suivant
   <li>modifier</li>
   <li>créer des composants vues version API Options </li>
 </ul>
+
+=> une fois créé => afficher dans App 
+
+Bonus => créer une variable local (state) titre = "Deuxième composant"
+et l'afficher dans le vue 
