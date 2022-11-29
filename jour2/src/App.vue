@@ -13,9 +13,11 @@ import Troisieme from './components/Troisieme.vue';
 import Article from './components/Article.vue';
 import Data from './components/Data.vue';
 import Modifier from './components/Modifier.vue';
+import Directive from './components/Directive.vue';
 </script>
 
 <template>
+  <Directive />
   <Modifier />
   <Data />
   <Premier />
