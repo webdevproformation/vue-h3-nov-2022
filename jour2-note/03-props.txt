@@ -8,3 +8,18 @@ qui vont être intialiser dans le Parent
 
 Créer deux composants vue => Etudiants (Parent) 
                           => Etudiant  (Enfant)
+
+
+Créer deux composants Article 
+                       h1 titre : "article 1",
+                       p  body : "lorem ipsum"
+                       div 
+                        commentaires : [
+                            { message : "bonjour" , auteur : "Julien" },
+                            { message : "Hello" , auteur : "Céline" },
+                        ]
+                    Commentaire 
+
+                        <ul>
+                            li  message - auteur  
+                        </ul>
