@@ -10,6 +10,7 @@ import Quatrieme from './components/Quatrieme.vue';
 import SeptiemeVue from './components/Septieme.vue';
 import Sixieme from './components/Sixieme.vue';
 import Troisieme from './components/Troisieme.vue';
+import Article from './components/Article.vue';
 </script>
 
 <template>
@@ -21,6 +22,7 @@ import Troisieme from './components/Troisieme.vue';
   <Sixieme />
   <SeptiemeVue />
   <Etudiants />
+  <Article />
 </template>
 
 <style scoped>
