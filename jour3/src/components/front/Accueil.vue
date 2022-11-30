@@ -8,7 +8,7 @@
             <article v-for="article , index in articles" :key="index" class="col-3">
                 <h2 v-more="article.title"></h2>
                 <p v-more.body="article.body"></p>
-                <RouterLink :to="'/'" class="btn btn-primary">lire la suite ...</RouterLink> 
+                <RouterLink :to="{name : 'single' , params : {id : article.id}}" class="btn btn-primary">lire la suite ...</RouterLink> 
             </article>
         </div>
     </div>
