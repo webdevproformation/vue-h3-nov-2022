@@ -24,6 +24,23 @@ export const useTodoStore = defineStore("todoStore" , {
         nouvelleTache : function(){
             const tache = { id : Date.now() , nom : "nouvelle tâche" , status : false } 
             this.taches.push( tache );
+        },
+        nouvelleTache2 : async function(nom ){
+            const tache = { id : Date.now() , nom , status : false } 
+            const options = {
+                method : "POST",
+                body : JSON.stringify(tache),
+                headers : {
+                    "content-type" : "application/json"
+                }
+            }
+            try{
+                await fetch("http://localhost:3400/taches" , options);
+                this.taches.push( tache );
+
+            }catch(ex){
+                console.log(new Error(ex))
+            }
         }
     } // setters capacité à modifier le state 
 })

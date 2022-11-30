@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="btn btn-success" @click="tachesStore.nouvelleTache()">ajouter une nouvelle tâche</button>
+        <FormAddTache />
         <h1>{{ tachesStore.titre }}</h1> 
         <!-- afficher la liste de tâches -->
         <div class="row">
@@ -41,6 +41,7 @@
 import { ref , onMounted } from "vue"
 import { RouterLink } from "vue-router"
 import { useTodoStore } from "../../stores/todoStore"
+import FormAddTache from "../front/FormAddTache.vue"
 
 let articles = ref([]);
 let tachesStore = useTodoStore() ;
