@@ -42,9 +42,15 @@ export default {
         }
     },
     mounted : function(){
-       const id = this.$route.params.id ;
+       
        this.id = parseInt(this.$route.params.id ) - 1 
-       fetch("https://jsonplaceholder.typicode.com/posts/"+id)
+       fetch("https://jsonplaceholder.typicode.com/posts/"+this.id)
+            .then(reponse => reponse.json())
+            .then(data => this.article = data)
+    },
+    updated : function(){
+        this.id = parseInt(this.$route.params.id ) - 1 
+        fetch("https://jsonplaceholder.typicode.com/posts/"+this.id)
             .then(reponse => reponse.json())
             .then(data => this.article = data)
     }
