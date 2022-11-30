@@ -1,7 +1,7 @@
 <template>
     <div>
         <button class="btn btn-success" @click="tachesStore.nouvelleTache()">ajouter une nouvelle tâche</button>
-        <h1>{{ tachesStore.titre }}</h1>
+        <h1>{{ tachesStore.titre }}</h1> 
         <!-- afficher la liste de tâches -->
         <div class="row">
             <article class="col-4" v-for="todo , index in tachesStore.taches" :key="index">

@@ -12,3 +12,16 @@ npm i pinia
 // activation sur l'ensemble de notre application 
 
 main.js
+
+créer un store dans lequel vous allez stocker 
+userStore 
+stocker user qui contient les informations suivantes 
+
+{
+    login : "admin",
+    password : "azerty"
+    isLogged : false
+}
+
+lorsque vous remplissez le formulaire de connexion => vous allez vérifier que le login et le password saisis correspondent à ceux stocké dans le store => 
+si c'est correcte => modifier la valeurs de isLogged => true 
