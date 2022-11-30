@@ -50,6 +50,7 @@ onMounted( () => {
     fetch("https://jsonplaceholder.typicode.com/posts")
             .then(reponse => reponse.json())
             .then(data => articles.value = data)
+    tachesStore.getTaches();
 } )
 
 </script>

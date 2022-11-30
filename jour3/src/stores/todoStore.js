@@ -4,11 +4,7 @@ import { defineStore } from "pinia"
 export const useTodoStore = defineStore("todoStore" , {
     state : () => {
         return {
-            taches : [
-                {id : 1 , nom : "apprendre js" , status : true},
-                {id : 2 , nom : "apprendre Angular" , status : false},
-                {id : 3 , nom : "créer un e-commerce" , status : true},
-            ],
+            taches : [],
             titre : "decouverte de pinia"
         }
     },
@@ -20,6 +16,11 @@ export const useTodoStore = defineStore("todoStore" , {
         }
     }, // récupérer le state en réalisant réalisant une modification AVANT l'affichage en composant
     actions : {
+        getTaches : async function(){
+            const reponse = await fetch("http://localhost:3400/taches")
+            const data = await reponse.json()
+            this.taches = data;
+        },
         nouvelleTache : function(){
             const tache = { id : Date.now() , nom : "nouvelle tâche" , status : false } 
             this.taches.push( tache );
