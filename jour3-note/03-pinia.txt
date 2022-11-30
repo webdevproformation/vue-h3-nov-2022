@@ -1,0 +1,14 @@
+pinia => comme Redux / useContext/createContext 
+
+site officiel => https://pinia.vuejs.org/
+
+state Manager => centraliser des informations dans le state 
+=> les utiliser dans n'importe quelle composant 
+quelque soit sa position 
+
+cd jour3 
+npm i pinia 
+
+// activation sur l'ensemble de notre application 
+
+main.js

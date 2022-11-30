@@ -1,5 +1,28 @@
 <template>
     <div>
+        <button class="btn btn-success" @click="tachesStore.nouvelleTache()">ajouter une nouvelle tâche</button>
+        <h1>{{ tachesStore.titre }}</h1>
+        <!-- afficher la liste de tâches -->
+        <div class="row">
+            <article class="col-4" v-for="todo , index in tachesStore.taches" :key="index">
+                <div class="card">
+                    <header class="card-header">
+                        <h2>{{ todo.nom }}</h2>
+                    </header>  
+                </div>
+            </article>
+        </div>
+        <h2>tâche en cours </h2>
+        <div class="row">
+            <article class="col-4" v-for="todo , index in tachesStore.encours" :key="index">
+                <div class="card">
+                    <header class="card-header">
+                        <h2>{{ todo.nom }}</h2>
+                    </header>  
+                </div>
+            </article>
+        </div>
+       <!--  {{ JSON.stringify( tachesStore.taches ) }} -->
         <h1>Bienvenu</h1>
         <!-- <pre>
             {{ JSON.stringify(articles , null , " ") }}
@@ -17,8 +40,10 @@
 // équivalent avec API Composition 
 import { ref , onMounted } from "vue"
 import { RouterLink } from "vue-router"
+import { useTodoStore } from "../../stores/todoStore"
 
 let articles = ref([]);
+let tachesStore = useTodoStore() ;
 //let articles = reactive([]);
 
 onMounted( () => {
