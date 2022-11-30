@@ -9,6 +9,9 @@
                     <header class="card-header">
                         <h2>{{ todo.nom }}</h2>
                     </header>  
+                    <footer class="card-footer">
+                        <button class="btn btn-danger" @click="suppr(todo.id)">suppr</button>
+                    </footer>
                 </div>
             </article>
         </div>
@@ -46,6 +49,10 @@ import FormAddTache from "../front/FormAddTache.vue"
 let articles = ref([]);
 let tachesStore = useTodoStore() ;
 //let articles = reactive([]);
+
+function suppr(id){
+    tachesStore.suppr(id);
+}
 
 onMounted( () => {
     fetch("https://jsonplaceholder.typicode.com/posts")

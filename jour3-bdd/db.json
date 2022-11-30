@@ -6,29 +6,9 @@
       "status": true
     },
     {
-      "id": 2,
-      "nom": "apprendre Angular",
-      "status": false
-    },
-    {
       "id": 3,
       "nom": "créer un e-commerce",
       "status": true
-    },
-    {
-      "id": 4,
-      "nom": "installer json-server",
-      "status": true
-    },
-    {
-      "id": 5,
-      "nom": "faire une exo",
-      "status": true
-    },
-    {
-      "id": 1669822814930,
-      "nom": "nouvelle tâche",
-      "status": false
     },
     {
       "id": 1669822853779,

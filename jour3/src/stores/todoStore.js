@@ -25,6 +25,11 @@ export const useTodoStore = defineStore("todoStore" , {
             const tache = { id : Date.now() , nom : "nouvelle tâche" , status : false } 
             this.taches.push( tache );
         },
+        suppr : async function(id){
+            // requête ajax pour supprimer la tache dans la bdd 
+            await fetch("http://localhost:3400/taches/"+id , {method : "DELETE"})
+            this.getTaches()
+        },
         nouvelleTache2 : async function(nom ){
             const tache = { id : Date.now() , nom , status : false } 
             const options = {
