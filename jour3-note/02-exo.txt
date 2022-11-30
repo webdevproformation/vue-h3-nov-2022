@@ -1,0 +1,16 @@
+dans la composant Accueil 
+réalisez une requête ajax vers l'api suivante :
+https://jsonplaceholder.typicode.com/posts
+
+afficher les articles dans le composant en utilisant une boucle v-for 
+
+<article>
+    <h2>title</h2>
+    <p>body</p>
+    <RouterLink > </RouterLink > 
+</article>
+
+=> mounted 
+
+=> API Options / Api Composition 
+
