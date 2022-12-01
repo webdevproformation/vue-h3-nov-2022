@@ -33,3 +33,25 @@ export default {
 <template>
     <slot />
 </template>
+
+props.children dans React 
+
+créer le composant Exo1 
+
+ce composant est appelé via la page Accueil 
+le composant Exo1 dispose de 3 slots nommés :
+header
+   contient un bouton
+body 
+footer 
+
+appeler le composant Exo1 via le composant Accueil 
+avec les valeurs suivantes 
+- header 
+<h1>Exo 1</h1>
+- body 
+formulaire avec un menu déroulant avec 3 pays france / belgique / allemagne 
+- footer 
+un lien hypertexte vers google 
+
+
