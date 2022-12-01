@@ -1,0 +1,35 @@
+
+<template>
+    <Enfant />
+    <Enfant :data="liste" :adresse="adresse">
+<template>
+
+=> envoyer du parent vers l'enfant des props (variable avec valeurs) informations
+
+-------------
+
+export default {
+    props : ["data", "adresse"],
+    props : {"data" : Number , "adresse" : String]},
+}
+
+
+
+------------
+------------
+
+
+
+<template>
+    <Enfant> 
+        <h1>je suis du html</h1>
+    </Enfant> 
+<template>
+
+
+------------
+
+
+<template>
+    <slot />
+</template>
