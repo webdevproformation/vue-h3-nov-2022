@@ -41,6 +41,7 @@ créer le composant Exo1
 ce composant est appelé via la page Accueil 
 le composant Exo1 dispose de 3 slots nommés :
 header
+
    contient un bouton
 body 
 footer 
@@ -51,7 +52,30 @@ avec les valeurs suivantes
 <h1>Exo 1</h1>
 - body 
 formulaire avec un menu déroulant avec 3 pays france / belgique / allemagne 
-- footer 
+- dfooter 
 un lien hypertexte vers google 
 
 
+import Enfant from "./Enfant"
+
+function Parent(){
+    return (
+        <Enfant>
+            <h1>je suis un titre</h1>
+            <p id="">toto</p>
+        </Enfant>
+    )
+}
+
+function Enfant(props){
+    return (
+        <div>
+            <header>
+                { props.children.header }
+            </header>
+            <p>
+                { props.children.body }
+            </p>
+        </div>
+    )
+}
