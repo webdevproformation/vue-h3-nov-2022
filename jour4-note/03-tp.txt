@@ -45,3 +45,16 @@ json-server
     ]
     // stocker le panier => dans un store 
 
+
+=> démarrer la base de données => positionner dans le dossier ecommerce-bdd 
+json-server db.json --watch --port=3004
+
+http://localhost:3004/catalogues
+http://localhost:3004/users
+
+=> créer un nouveau projet vuejs => 
+installer vue / pinia / vue-router 
+
+=> créer la barre de menu 
+// créer la page d'accueil 
+// page single 
