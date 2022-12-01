@@ -19,7 +19,6 @@
     async function getArticles(){
         const api = new CatalogueApi()
         const data = await api.getAll()
-        console.log(data);
         articles.value = data ;
     }
     await getArticles();
