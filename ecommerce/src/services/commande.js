@@ -18,4 +18,14 @@ export class CommandeApi{
             console.log(ex)
         }
     }
+
+    async getAllCommande(email){
+        try{
+            const reponse = await fetch(`${this.url}?user.email=${email}`)
+            const data = await reponse.json();
+            return data ;
+        }catch(ex){
+            console.log(ex)
+        }
+    }
 }

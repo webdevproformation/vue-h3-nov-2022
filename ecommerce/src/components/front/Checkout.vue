@@ -18,6 +18,12 @@
             <input type="text" class="form-control mb-3" v-model="ville" placeholder="ville">
             <button class="btn btn-dark  mb-3" @click.prevent="submit">Enregistrer</button>
         </form>
+        <div class="alert alert-danger" v-if="showLivraison">
+            <div v-for="message in messages">{{ message }}</div>
+        </div>
+        <div class="alert alert-danger" v-else="showLivraison">
+            Votre adresse de livraison est bien enregistrée !
+        </div>
         <hr>
         <h2>paiement</h2>
         <div class="text-end">
@@ -42,6 +48,7 @@ let rue = ref("");
 let cp = ref("75000");
 let ville = ref("");
 let show = ref(false);
+let showLivraison = ref(false);
 let messages = ref([]);
 let router = useRouter();
 
@@ -64,7 +71,16 @@ function submit(){
 
     const {error} = validationLivraison.validate(livraison , {abortEarly : false} )
     console.log(error)
-    if(error) return  ;
+    if(error) {
+        showLivraison.value = true ;
+        const details = []
+        for(let er of error.details){
+            details.push(er.message)
+        }
+        messages.value = details;
+        return ;
+
+    } 
 
     userStore.addAdresseLivraison(livraison)
 }
