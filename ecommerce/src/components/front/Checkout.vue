@@ -16,7 +16,7 @@
             <input type="text" class="form-control mb-3" v-model="rue" placeholder="rue">
             <input type="number" class="form-control mb-3" v-model="cp" placeholder="00000">
             <input type="text" class="form-control mb-3" v-model="ville" placeholder="ville">
-            <button class="btn btn-dark  mb-3" @click.prevent="submit">Enregistrer</button>
+            <button class="btn btn-dark mb-3" @click.prevent="submit">Enregistrer</button>
         </form>
         <div class="alert alert-danger" v-if="showLivraison">
             <div v-for="message in messages">{{ message }}</div>
