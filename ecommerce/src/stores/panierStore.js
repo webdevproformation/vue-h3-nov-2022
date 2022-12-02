@@ -16,6 +16,30 @@ export const usePanierStore = defineStore("panierStore" , {
             } else {
                 this.panier.push(produit)
             }
+        }, 
+        moins : function(id){
+            const produitAugmenter = this.panier.find(item => item.id === id);
+            const index = this.panier.indexOf(produitAugmenter);
+            this.panier[index].quantite -= 1;
+            if(this.panier[index].quantite <= 0){
+                this.panier.splice(index,1);
+            }
+        },
+        plus : function(id){
+            //console.log("ici")
+            const produitAugmenter = this.panier.find(item => item.id === id);
+            const index = this.panier.indexOf(produitAugmenter);
+            this.panier[index].quantite += 1;
+        }
+    },
+    getters : {
+        totalPanier : function(){
+            return this.panier.reduce((total, item) => {
+                return total + item.quantite * item.prix
+            } , 0)
+        },
+        nbProduit : function(){
+            return this.panier.length
         }
     }
 })

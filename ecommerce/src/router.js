@@ -12,6 +12,6 @@ export const router = createRouter({
         {path : "/produit/:id" , name : "produit" , component: Single},
         {path : "/panier" , name : "panier" , component: Panier},
         {path : "/identification" , name : "identification" , component: Identification},
-        {path : "/profil" , name : "identification" , component: Profil}
+        {path : "/profil" , name : "profil" , component: Profil}
     ]
 })

@@ -14,7 +14,6 @@
                 <input type="number" style="width:80px" class="me-4" v-model="quantite">
                 <button class="btn btn-success">ajouter au panier</button>
             </form>
-            <pre>{{ JSON.stringify(panierStore.panier , null, " ")}}</pre>
         </div>
     </div>
 </template>
