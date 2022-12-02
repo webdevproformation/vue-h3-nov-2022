@@ -12,6 +12,9 @@
                     <RouterLink :to="{name:'panier'}" class="nav-link">Panier</RouterLink>
                     <span :class="classBadge">{{ panierStore.nbProduit }}</span>
                 </li>
+                <li class="nav-item d-flex align-items-baseline">
+                    <RouterLink :to="{name:'profil'}" class="nav-link">Profil</RouterLink>
+                </li>
             </ul>
         </nav>
     </div>

@@ -31,5 +31,31 @@
       "role": "admin"
     }
   ],
-  "commandes": []
+  "commandes": [
+    {
+      "user": {
+        "email": "loulou@yahoo.fr"
+      },
+      "produits": [
+        {
+          "id": 2,
+          "nom": "Nintendo DS",
+          "description": "lorem ipsum",
+          "prix": 500,
+          "image": "https://via.placeholder.com/400x200.png?text=Nintendo DS",
+          "status": true,
+          "quantite": 1
+        }
+      ],
+      "livraison": {
+        "rue": "33 rue de Paris",
+        "cp": 75000,
+        "ville": "Paris"
+      },
+      "dt_creation": 1669993175662,
+      "total": 500,
+      "status": "à traiter",
+      "id": 1
+    }
+  ]
 }

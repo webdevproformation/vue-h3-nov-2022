@@ -11,7 +11,7 @@ export class UserApi{
                     "content-type" : "application/json"
                 }
             }
-           const reponse = await fetch("http://localhost:3004/users", options)
+           const reponse = await fetch(this.url, options)
            const data = await reponse.json();
            return data ;
         }catch(ex){

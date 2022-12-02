@@ -30,6 +30,9 @@ export const usePanierStore = defineStore("panierStore" , {
             const produitAugmenter = this.panier.find(item => item.id === id);
             const index = this.panier.indexOf(produitAugmenter);
             this.panier[index].quantite += 1;
+        },
+        empty : function(){
+            this.panier = []
         }
     },
     getters : {

@@ -23,8 +23,9 @@
         <div class="text-end">
             <button class="btn btn-success  mb-3" @click="payer">Payer</button>
         </div>
-        {{ JSON.stringify(userStore.user ) }} <br>
-        {{ JSON.stringify(userStore.livraison) }}
+        <div class="alert alert-danger" v-if="show">
+            <div v-for="message in messages">{{ message }}</div>
+        </div>
     </div>
 </template>
 
@@ -34,20 +35,26 @@ import {useUserStore} from "../../stores/userStore"
 import { usePanierStore } from "../../stores/panierStore"
 import { ref } from "vue"
 import Joi from "joi";
+import { CommandeApi } from "../../services/commande"
+import {useRouter} from "vue-router"
 
 let rue = ref("");
 let cp = ref("75000");
 let ville = ref("");
+let show = ref(false);
+let messages = ref([]);
+let router = useRouter();
+
+const validationLivraison = Joi.object({
+        rue : Joi.string().min(5).max(255).required(),
+        cp : Joi.number().greater(0).required(),
+        ville : Joi.string().min(5).max(255).required(),
+    })
 
 const userStore = useUserStore()
 const panierStore = usePanierStore()
 
 function submit(){
-    const validationLivraison = Joi.object({
-        rue : Joi.string().min(5).max(255).required(),
-        cp : Joi.number().greater(0).required(),
-        ville : Joi.string().min(5).max(255).required(),
-    })
 
     const livraison = {
         rue : rue.value,
@@ -62,23 +69,53 @@ function submit(){
     userStore.addAdresseLivraison(livraison)
 }
 
-function payer(){
+async function payer(){
+
+    const validationCommande = Joi.object({
+        user : Joi.object({
+            email : Joi.string().email({ tlds: { allow: false } }).required(),
+        }),
+        produits : Joi.array().min(1).required(),
+        livraison : validationLivraison ,
+        total : Joi.number().greater(0).required(),
+        dt_creation  :Joi.number().greater(0).required(),
+        status : Joi.string().valid("à traiter")
+    });
+
 
     const commande = {
         user : {
-            email : userStore.user.email ,
-            role : userStore.user.role
+            email : userStore.user.email 
         },
         produits : panierStore.panier,
         livraison : userStore.livraison,
         dt_creation : Date.now(),
-        total : userStore.totalPanier ,
+        total : panierStore.totalPanier ,
         status : "à traiter"
     }
-
+    
     // Cas pratique 
     // verifier que la commande est conforme => via Joi 
+    const {error} = validationCommande.validate(commande, {abortEarly : false})
+
+    if(error) {
+        show.value = true ;
+        const details = []
+        for(let er of error.details){
+            details.push(er.message)
+        }
+        messages.value = details;
+        return ;
+
+    } 
+
+    const commandeApi = new CommandeApi();
+    const resultat = await commandeApi.create(commande) 
     // réaliser une requête POST pour ajouter le produit dans la base de données 
+    if(resultat) {
+        panierStore.empty();
+        router.push("/profil")
+    }
 
 }
 
