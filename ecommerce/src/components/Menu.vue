@@ -8,8 +8,9 @@
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
+                <li class="nav-item d-flex align-items-baseline">
                     <RouterLink :to="{name:'panier'}" class="nav-link">Panier</RouterLink>
+                    <span :class="classBadge">{{ panierStore.nbProduit }}</span>
                 </li>
             </ul>
         </nav>
@@ -18,4 +19,11 @@
 
 <script setup>
     import { RouterLink } from "vue-router"
+    import { usePanierStore } from "../stores/panierStore";
+    import {computed} from "vue"
+    const panierStore = usePanierStore();
+
+    const classBadge = computed(() => {
+        return panierStore.nbProduit === 0 ? "badge bg-dark" : "badge bg-success"
+    })
 </script>
