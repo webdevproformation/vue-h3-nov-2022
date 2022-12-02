@@ -14,7 +14,11 @@
                 <input type="number" style="width:80px" class="me-4" v-model="quantite">
                 <button class="btn btn-success">ajouter au panier</button>
             </form>
+            <div class="alert alert-success mt-3" v-if="show">
+                produit ajouté dans le panier
+            </div>
         </div>
+       
     </div>
 </template>
 <script setup>
@@ -26,13 +30,21 @@
     const id = ref(route.params.id) ;
     let produit = ref({})
     let quantite = ref(1)
+    let show = ref(false)
     let panierStore = usePanierStore();
 
     function submit(){
-        const itemPanier = {
-            ...produit.value , 
-            quantite : quantite.value}
-        panierStore.add(itemPanier);
+        if(produit.value){
+            const itemPanier = {
+                ...produit.value , 
+                quantite : quantite.value}
+            panierStore.add(itemPanier);
+            show.value = true;
+            setTimeout( () => {
+                show.value = false;
+            }, 2000)
+        }
+        
     }
 
 
