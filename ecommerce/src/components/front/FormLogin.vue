@@ -32,4 +32,12 @@
             }
             console.log(identifiants , props.action);
         }
+        // créer un nouveau store :
+        // userStore 
+        // state : {}
+        // action //
+        // add => actions 
+        // requête POST auprès de la base de données pour ajouter un nouveau profil user 
+        // ajouter des vérifications avant traitement (Joi)
+        // 
 </script>
