@@ -1,35 +1,47 @@
 {
-    "catalogue" : [
-        {
-            "id" : 1 , 
-            "nom" : "PlayStation 5" , 
-            "description" : "lorem ipsum " , 
-            "prix" : 700 , 
-            "image" : "https://via.placeholder.com/400x200.png?text=PS5" , 
-            "status" : true   
-        },
-        {
-            "id" : 2 , 
-            "nom" : "Nintendo DS" , 
-            "description" : "lorem ipsum" , 
-            "prix" : 500 , 
-            "image" : "https://via.placeholder.com/400x200.png?text=Nintendo DS" , 
-            "status" : true   
-        }
-    ],
-    "users" : [
-        {
-            "id" : 1 , 
-            "email" : "client@yahoo.fr" , 
-            "password" : "123456" , 
-            "role" : "client" 
-        },
-        {
-            "id" : 2 , 
-            "email" : "admin@yahoo.fr" , 
-            "password" : "123456" , 
-            "role" : "admin" 
-        }
-    ] ,
-    "commandes" : []
+  "catalogue": [
+    {
+      "id": 1,
+      "nom": "PlayStation 5",
+      "description": "lorem ipsum ",
+      "prix": 700,
+      "image": "https://via.placeholder.com/400x200.png?text=PS5",
+      "status": true
+    },
+    {
+      "id": 2,
+      "nom": "Nintendo DS",
+      "description": "lorem ipsum",
+      "prix": 500,
+      "image": "https://via.placeholder.com/400x200.png?text=Nintendo DS",
+      "status": true
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "client@yahoo.fr",
+      "password": "123456",
+      "role": "client"
+    },
+    {
+      "id": 2,
+      "email": "admin@yahoo.fr",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "email": "toto@yahoo.fr",
+      "password": "123456",
+      "role": "client",
+      "id": 3
+    },
+    {
+      "email": "titi@yahoo.fr",
+      "password": "123456",
+      "role": "client",
+      "id": 4
+    }
+  ],
+  "commandes": []
 }

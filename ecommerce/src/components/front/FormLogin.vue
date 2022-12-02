@@ -21,10 +21,12 @@
         import {ref , defineProps , computed} from "vue";
         import {useUserStore} from "../../stores/userStore"
         import Joi from "joi";
+        import {useRouter} from "vue-router"
         const email = ref("")
         const password = ref("")
         let show = ref(false)
         let messages = ref({})
+        let router = useRouter()
 
         const props = defineProps({ btn : String , action : String})
 
@@ -32,7 +34,7 @@
             return `btn btn-${props.btn}`;
         })
 
-        function submit (){
+        async function submit (){
             // réaliser verifications sur les informations saisies dans le formulaire 
             // 8 if // 8 vérifications 
             const validationIdentifiant = Joi.object({
@@ -58,7 +60,11 @@
             let userStore = useUserStore()
             if(props.action === "creer"){
                 // créer un compte
-                userStore.add(identifiants)
+                const reponse = await userStore.add(identifiants)
+                if(reponse.message && reponse.message === "ok"){
+                    router.push("/checkout")
+                }
+                console.log(reponse);
             }else if(props.action === "connecter") {
                 userStore.login(identifiants)
             }
