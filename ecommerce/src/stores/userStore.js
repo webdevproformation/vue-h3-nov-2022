@@ -4,7 +4,8 @@ import { UserApi } from "../services/user"
 export const useUserStore = defineStore("userStore" , {
     state : () => {
         return {
-            user : {}
+            user : {},
+            livraison : {}
         }
     },
     actions : {
@@ -32,7 +33,10 @@ export const useUserStore = defineStore("userStore" , {
             return {message : "ok" } ;
         },
         login : function(identifiants){},
-        logout : function(){}
+        logout : function(){},
+        addAdresseLivraison : function(adresse){
+            this.livraison = adresse 
+        }
     }
 
 })
