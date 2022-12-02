@@ -18,6 +18,18 @@
             <input type="text" class="form-control mb-3" v-model="ville" placeholder="ville">
             <button class="btn btn-dark mb-3" @click.prevent="submit">Enregistrer</button>
         </form>
+        <!--
+            historique : 
+
+            symfony => PHP : Python 
+            react  => 
+            vue 
+            node + express + pug => https://pugjs.org/api/getting-started.html (Twig)
+            angular 
+
+            => https://w3techs.com/
+            => Gutenberg (gestion des articles 2021 +> REACT )
+        -->
         <div class="alert alert-danger" v-if="showLivraison">
             <div v-for="message in messages">{{ message }}</div>
         </div>
